@@ -13,3 +13,6 @@ const datainformation = {
 };
 
 saveBruger(datainformation);
+
+// Event listener: vis data for valgt bruger
+userSelect.addEventListener("change", userSelectChange);
