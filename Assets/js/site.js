@@ -33,7 +33,12 @@ function userSelectChange() {
  colorInput2.value = data.color2;
 }
 
-function saveBruger(information) {
+function saveInformation(information) {
   localStorage.setItem("information", JSON.stringify(information));
+}
+
+function henteinformation() {
+  const information = localStorage.getItem("information");
+  return JSON.parse(information);
 }
 
