@@ -12,7 +12,28 @@ const datainformation = {
   information3: { name: "Spil", eddith: "skrive", color: "green", delecte: "X", color2: "red" },
 };
 
+const
+
 saveBruger(datainformation);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
+
+function userSelectChange() {
+  const selectedUser = userSelect.value;
+  console.log("change user to: "+ selectedUser); 
+  // TODO: Hent data localStorage og vis i formularen
+ const information = henteinformation();
+ const data = bruger [selectedUser];
+ console.log(data);
+ nameInput.value = data.name;
+ eddithInput.value = data.eddith;
+ colorInput.value = data.color;
+ deleteInput.value = data.delete;
+ colorInput2.value = data.color2;
+}
+
+function saveBruger(information) {
+  localStorage.setItem("information", JSON.stringify(information));
+}
+
