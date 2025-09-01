@@ -95,10 +95,46 @@ function userSelectChange() {
   colorInput.value = data4.color;
   delecteInput.value = data4.delete;
   colorInput2.value = data4.color2;
+
+  const datapriserfunktioner = hentefunktioner2();
+  const data5 = datapriserfunktioner[selectedUser];
+  console.log(data5);
+  nameInput.value = data5.name;
+  eddithInput.value = data5.eddith;
+  colorInput.value = data5.color;
+  delecteInput.value = data5.delete;
+  colorInput2.value = data5.color2;
+
+  const spil = hentespil();
+  const data6 = spil[selectedUser];
+  console.log(data6);
+  nameInput.value = data6.name;
+  eddithInput.value = data6.eddith;
+  colorInput.value = data6.color;
+  delecteInput.value = data6.delete;
+  colorInput2.value = data6.color2;
+
+  const dataspilfunktioner = hentefunktioner3();
+  const data7 = dataspilfunktioner[selectedUser];
+  console.log(data7);
+  nameInput.value = data7.name;
+  eddithInput.value = data7.eddith;
+  colorInput.value = data7.color;
+  delecteInput.value = data7.delete;
+  colorInput2.value = data7.color2;
 }
 
-function saveInformation(information) {
+function saveInformation(information, indkøb, indkøbsfunktioner, priser, priserfunktioner, spil, spilfunktioner) {
   localStorage.setItem("information", JSON.stringify(information));
+
+  localStorage.setItem("indkøb", JSON.stringify(indkøb));
+  localStorage.setItem("funktioner1", JSON.stringify(indkøbsfunktioner));
+
+  localStorage.setItem("priser", JSON.stringify(priser));
+  localStorage.setItem("priserfunktioner", JSON.stringify(priserfunktioner));
+
+  localStorage.setItem("spil", JSON.stringify(spil));
+  localStorage.setItem("spilfunktioner", JSON.stringify(spilfunktioner));
 }
 
 function henteinformation() {
