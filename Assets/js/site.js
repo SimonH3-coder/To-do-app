@@ -194,6 +194,66 @@ saveButton.addEventListener("click", () => {
   data.delecte = delecte;
   data.color2 = color2;
   saveInformation(information);
+
+  const indkøb = henteindkøb();
+  const data2 = indkøb[selectedUser];
+  console.log(data2);
+  data2.name = name;
+  data2.eddith = eddith;
+  data2.color = color;
+  data2.delecte = delecte;
+  data2.color2 = color2;
+  saveInformation(indkøb);
+
+  const dataindkøbsfunktioner = hentefunktioner1();
+  const data3 = dataindkøbsfunktioner[selectedUser];
+  console.log(data3);
+  data3.name = name;
+  data3.eddith = eddith;
+  data3.color = color;
+  data3.delecte = delecte;
+  data3.color2 = color2;
+  saveInformation(dataindkøbsfunktioner);
+
+  const priser = hentepriser();
+  const data4 = priser[selectedUser];
+  console.log(data4);
+  data4.name = name;
+  data4.eddith = eddith;
+  data4.color = color;
+  data4.delecte = delecte;
+  data4.color2 = color2;
+  saveInformation(priser);
+
+  const datapriserfunktioner = hentefunktioner2();
+  const data5 = datapriserfunktioner[selectedUser];
+  console.log(data5);
+  data5.name = name;
+  data5.eddith = eddith;
+  data5.color = color;
+  data5.delecte = delecte;
+  data5.color2 = color2;
+  saveInformation(datapriserfunktioner);
+
+  const spil = hentespil();
+  const data6 = spil[selectedUser];
+  console.log(data6);
+  data6.name = name;
+  data6.eddith = eddith;
+  data6.color = color;
+  data6.delecte = delecte;
+  data6.color2 = color2;
+  saveInformation(spil);
+
+  const dataspilfunktioner = hentefunktioner3();
+  const data7 = dataspilfunktioner[selectedUser];
+  console.log(data7);
+  data7.name = name;
+  data7.eddith = eddith;
+  data7.color = color;
+  data7.delecte = delecte;
+  data7.color2 = color2;
+  saveInformation(dataspilfunktioner);
 });
 
 // Vis data for første bruger ved load
