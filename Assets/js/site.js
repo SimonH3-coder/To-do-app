@@ -18,7 +18,7 @@ const dataindkøb = {
   indkøb3: { name: "Æg", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
-const datafunktioner = {
+const dataindkøbsfunktioner = {
   funktioner1: { name: "Indkøb" },
   funktioner2: { line: "skriv" },
   funktioner3: { box: "noter", delecte: "X", color: "red" },
@@ -44,7 +44,14 @@ const dataspil = {
   spil3: { name: "Doom4", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
-saveInformation(datainformation, dataindkøb, datafunktioner, datapriser, datapriserfunktioner);
+const dataspilfunktioner = {
+  spilfunktioner1: { name: "Spil" },
+  spilfunktioner2: { line: "skriv" },
+  spilfunktioner3: { box: "noter", delecte: "X", color: "red" },
+  spilfunktioner4: { box: "noter", right: "✓", color: "green" },
+};
+
+saveInformation(datainformation, dataindkøb, datafunktioner, datapriser, datapriserfunktioner, dataspil, dataspilfunktioner);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
@@ -61,9 +68,36 @@ function userSelectChange() {
   colorInput.value = data.color;
   delecteInput.value = data.delete;
   colorInput2.value = data.color2;
+
+  const indkøb = henteindkøb();
+  const data2 = indkøb[selectedUser];
+  console.log(data2);
+  nameInput.value = data2.name;
+  eddithInput.value = data2.eddith;
+  colorInput.value = data2.color;
+  delecteInput.value = data2.delete;
+  colorInput2.value = data2.color2;
+
+  const dataindkøbsfunktioner = hentefunktioner1();
+  const data3 = dataindkøbsfunktioner[selectedUser];
+  console.log(data3);
+  nameInput.value = data3.name;
+  eddithInput.value = data3.eddith;
+  colorInput.value = data3.color;
+  delecteInput.value = data3.delete;
+  colorInput2.value = data3.color2;
+
+  const priser = hentepriser();
+  const data4 = priser[selectedUser];
+  console.log(data4);
+  nameInput.value = data4.name;
+  eddithInput.value = data4.eddith;
+  colorInput.value = data4.color;
+  delecteInput.value = data4.delete;
+  colorInput2.value = data4.color2;
 }
 
-function saveInformation(information, indkøb) {
+function saveInformation(information) {
   localStorage.setItem("information", JSON.stringify(information));
 }
 
