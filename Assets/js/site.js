@@ -18,6 +18,13 @@ const dataindkøb = {
   indkøb3: { name: "Æg", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
+const datafunktioner = {
+  funktioner1: { name: "Priser" },
+  funktioner2: { line: "skriv" },
+  funktioner3: { box: "noter", delecte: "X", color: "red" },
+  funnktioner4: { box: "noter", right: "✓", color: "green" },
+};
+
 saveInformation(datainformation, dataindkøb);
 
 // Event listener: vis data for valgt bruger
