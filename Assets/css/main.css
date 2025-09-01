@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Fjerner mellemrum fra listen */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styler listen */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+/* Sætter listen i forskellige farver */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Laver bagrundsfarve ved hover */
+ul li:hover {
+  background: #ddd;
+}

@@ -51,7 +51,7 @@ const dataspilfunktioner = {
   spilfunktioner4: { box: "noter", right: "✓", color: "green" },
 };
 
-saveInformation(datainformation, dataindkøb, datafunktioner, datapriser, datapriserfunktioner, dataspil, dataspilfunktioner);
+saveInformation(datainformation, dataindkøb, dataindkøbsfunktioner, datapriser, datapriserfunktioner, dataspil, dataspilfunktioner);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
