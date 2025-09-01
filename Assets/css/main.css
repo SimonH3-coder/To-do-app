@@ -28,3 +28,38 @@ ul li:nth-child(odd) {
 ul li:hover {
   background: #ddd;
 }
+
+/* Når du klikker på et element i listen, bliver teksten gennemstreget */
+
+ul li.checked {
+  background: #888;
+  color: #fff;
+  /* text-decoration: line-through; */
+}
+
+/* Klikker og mærker et flet når du klikker på det */
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style lukke knappen */
+.close {
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
