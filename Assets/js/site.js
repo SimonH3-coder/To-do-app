@@ -25,7 +25,7 @@ const datafunktioner = {
   funnktioner4: { box: "noter", right: "✓", color: "green" },
 };
 
-saveInformation(datainformation, dataindkøb);
+saveInformation(datainformation, dataindkøb, datafunktioner);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
