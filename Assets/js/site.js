@@ -26,9 +26,9 @@ const datafunktioner = {
 };
 
 const datapriser = {
-  priser1: { price: "100 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
-  priser2: { price: "17 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
-  priser3: { price: "22 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  priser1: { price: "100kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  priser2: { price: "17kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  priser3: { price: "22kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
 const datapriserfunktioner = {
@@ -36,6 +36,12 @@ const datapriserfunktioner = {
   priserfunktioner2: { line: "skriv" },
   priserfunktioner3: { box: "noter", delecte: "X", color: "red" },
   priserfunktioner4: { box: "noter", right: "✓", color: "green" },
+};
+
+const dataspil = {
+  spil1: { name: "Sly2", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  spil2: { name: "Diablo2", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  spil3: { name: "Doom4", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
 saveInformation(datainformation, dataindkøb, datafunktioner, datapriser, datapriserfunktioner);
