@@ -142,6 +142,36 @@ function henteinformation() {
   return JSON.parse(information);
 }
 
+function henteindkøb() {
+  const indkøb = localStorage.getItem("indkøb");
+  return JSON.parse(indkøb);
+}
+
+function hentefunktioner1() {
+  const funktioner1 = localStorage.getItem("funktioner1");
+  return JSON.parse(funktioner1);
+}
+
+function hentepriser() {
+  const priser = localStorage.getItem("priser");
+  return JSON.parse(priser);
+}
+
+function hentefunktioner2() {
+  const priserfunktioner = localStorage.getItem("priserfunktioner");
+  return JSON.parse(priserfunktioner);
+}
+
+function hentespil() {
+  const spil = localStorage.getItem("spil");
+  return JSON.parse(spil);
+}
+
+function hentefunktioner3() {
+  const spilfunktioner = localStorage.getItem("spilfunktioner");
+  return JSON.parse(spilfunktioner);
+}
+
 // Event listener: gem data fra formularen
 saveButton.addEventListener("click", () => {
   console.log("save data");
