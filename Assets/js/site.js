@@ -8,11 +8,17 @@ const saveButton = document.getElementById("saveButton");
 
 const datainformation = {
   information1: { name: "Indkøb", eddith: "skriv", color: "green", delecte: "X", color2: "red" },
-  information2: { name: "Priser", eddith: "skrive", color: "green", delecte: "X", color2: "red" },
-  information3: { name: "Spil", eddith: "skrive", color: "green", delecte: "X", color2: "red" },
+  information2: { name: "Priser", eddith: "skriv", color: "green", delecte: "X", color2: "red" },
+  information3: { name: "Spil", eddith: "skriv", color: "green", delecte: "X", color2: "red" },
 };
 
-saveInformation(datainformation);
+const dataindkøb = {
+  indkøb1: { name: "Ost", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  indkøb2: { name: "Mælk", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  indkøb3: { name: "Æg", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+};
+
+saveInformation(datainformation, dataindkøb);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
