@@ -25,6 +25,12 @@ const datafunktioner = {
   funnktioner4: { box: "noter", right: "✓", color: "green" },
 };
 
+const datapriser = {
+  priser1: { price: "100 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  priser2: { price: "17 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+  priser3: { price: "22 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
+};
+
 saveInformation(datainformation, dataindkøb, datafunktioner);
 
 // Event listener: vis data for valgt bruger
@@ -44,7 +50,7 @@ function userSelectChange() {
   colorInput2.value = data.color2;
 }
 
-function saveInformation(information) {
+function saveInformation(information, indkøb) {
   localStorage.setItem("information", JSON.stringify(information));
 }
 
