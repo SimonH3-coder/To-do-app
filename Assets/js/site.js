@@ -19,7 +19,7 @@ const dataindkøb = {
 };
 
 const datafunktioner = {
-  funktioner1: { name: "Priser" },
+  funktioner1: { name: "Indkøb" },
   funktioner2: { line: "skriv" },
   funktioner3: { box: "noter", delecte: "X", color: "red" },
   funnktioner4: { box: "noter", right: "✓", color: "green" },
@@ -31,7 +31,14 @@ const datapriser = {
   priser3: { price: "22 kr", box: "noter", color: "blue", eddith: "skriv", color2: "green" },
 };
 
-saveInformation(datainformation, dataindkøb, datafunktioner);
+const datapriserfunktioner = {
+  priserfunktioner1: { name: "Priser" },
+  priserfunktioner2: { line: "skriv" },
+  priserfunktioner3: { box: "noter", delecte: "X", color: "red" },
+  priserfunktioner4: { box: "noter", right: "✓", color: "green" },
+};
+
+saveInformation(datainformation, dataindkøb, datafunktioner, datapriser, datapriserfunktioner);
 
 // Event listener: vis data for valgt bruger
 userSelect.addEventListener("change", userSelectChange);
