@@ -27,7 +27,7 @@ function makeNewData() {
       {
         listName: "list 1",
         items: [
-          { name: "item 1", done: false },
+          { name: "item1", done: false },
           { name: "item2", done: true },
           { name: "item3", done: false },
         ],
@@ -72,9 +72,17 @@ function initApp() {
 //#region view code
 function makelistView(data) {
   console.log("makelistView");
-  // Vis data til bruger
-  data.lists.forEach((list) => {
-    console.log(list.listName);
+  // tøm contenSection
+  contentSection.innerHTML = "";
+
+  data.lists.forEach((list, index) => {
+    let listContainer = document.createElement("div");
+    //vis liste
+    listContainer.innerHTML = `<h2 onclick="listViewCallback("showList",${index})">${list.listName}<h2>
+    <button onclick="listViewCallback("showList",${index})">delete</button>
+    <buttononclick="listViewCallback("showList",${index})">edit</buttononclick=>`;
+
+    contentSection.appendChild(listContainer);
   });
 }
 
