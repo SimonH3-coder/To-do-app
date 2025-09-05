@@ -60,17 +60,23 @@ function initApp() {
     // vi har ikke data
     currentData = makeNewData();
     saveData(currentData);
-  } else {
-    // Vis data til bruger
   }
-
-  //evaluere data
-  currentData = getData();
+  // Vi har data
+  makelistView(currentData);
 }
+
+//evaluere data
 
 //#endregion controller code
 
 //#region view code
+function makelistView(data) {
+  console.log("makelistView");
+  // Vis data til bruger
+  data.lists.forEach((list) => {
+    console.log(list.listName);
+  });
+}
 
 //#endregion view code
 
