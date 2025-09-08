@@ -20,7 +20,7 @@ function saveData(mydData) {
 }
 function makeNewData() {
   console.log("makeNewData");
-  // dummt data hsk at tømme lister inden deployment
+  // dummt data husk at tømme lister inden deployment
   let newData = {
     darkMode: false,
     lists: [
@@ -42,6 +42,22 @@ function makeNewData() {
       },
       {
         listName: "indkøb2",
+        items: [
+          { name: "write", done: false },
+          { name: "wrong", done: true },
+          { name: "right", done: false },
+        ],
+      },
+      {
+        listName: "priser",
+        items: [
+          { name: "100 kr", done: false },
+          { name: "17 kr", done: true },
+          { name: "22 kr", done: false },
+        ],
+      },
+      {
+        listName: "priser2",
         items: [
           { name: "write", done: false },
           { name: "wrong", done: true },
