@@ -35,9 +35,17 @@ function makeNewData() {
       {
         listName: "indkøb",
         items: [
-          { name: "kød", done: false },
-          { name: "salat", done: true },
-          { name: "sovs", done: false },
+          { name: "Ost", done: false },
+          { name: "Mælk", done: true },
+          { name: "Æg", done: false },
+        ],
+      },
+      {
+        listName: "indkøb2",
+        items: [
+          { name: "write", done: false },
+          { name: "wrong", done: true },
+          { name: "right", done: false },
         ],
       },
     ],
