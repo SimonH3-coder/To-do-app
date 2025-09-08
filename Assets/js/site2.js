@@ -27,9 +27,9 @@ function makeNewData() {
       {
         listName: "list 1",
         items: [
-          { name: "item1", done: false },
-          { name: "item2", done: true },
-          { name: "item3", done: false },
+          { name: "item1 indkøb", done: false },
+          { name: "item2 priser", done: true },
+          { name: "item3 spil", done: false },
         ],
       },
       {
@@ -124,11 +124,44 @@ function makelistView(data) {
     <button onclick=listViewCallback("showList",${index})">write</button>
     <button onclick=listViewCallback("showList",${index})">tilføj</button>
     <button onclick=listViewCallback("showList",${index}">darkmode</button>
-    <buttion oncclick=listViewCallback("showlList",${index}">lightmode</button)`;
+    <button oncclick=listViewCallback("showlList",${index}">lightmode</button)`;
 
     contentSection.appendChild(listContainer);
   });
 }
+
+// Få button til at virker
+const newListbutton = document.getElementById("newListButton");
+const ValgInput = document.getElementById("ValgInput");
+const ValgList = document.getElementById("ValgList");
+
+// Nyt valg
+newListbutton.addEventListener("click", () => {
+  const taskText = ValgInput.value.trim();
+  if (taskText === "") return;
+
+  const li = document.createElement("li");
+  li.innerHTML = `
+  <span> ${taskText}</span>
+  <div>
+    <button class="completeBtn">right</button>
+    <button class="deleteBtn">wrong</button>
+  </div>
+  `;
+
+  // rigtig button
+  li.querySelector(".completeBtn").addEventListener("click", () => {
+    li.querySelector("span").classList.toggle("completed");
+  });
+
+  //slet button
+  li.querySelector(".deleteBtn").addEventListener("click", () => {
+    li.remove();
+  });
+
+  ValgList.appendChild(li);
+  ValgInput.value = "";
+});
 
 //#endregion view code
 
