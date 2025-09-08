@@ -121,8 +121,10 @@ function makelistView(data) {
     listContainer.innerHTML = `<h2 onclick="listViewCallback("showList",${index})">${list.listName}<h2>
     <button onclick="listViewCallback("showList",${index})">delete</button>
     <button onclick="listViewCallback("showList",${index})">edit</button>
-    <button onclick=listViewCallback("showList", ${index})">write</button>
-    <button onclick=listViewCallback("showList", ${index})">tilføj</button>`;
+    <button onclick=listViewCallback("showList",${index})">write</button>
+    <button onclick=listViewCallback("showList",${index})">tilføj</button>
+    <button onclick=listViewCallback("showList",${index}">darkmode</button>
+    <buttion oncclick=listViewCallback("showlList",${index}">lightmode</button)`;
 
     contentSection.appendChild(listContainer);
   });
