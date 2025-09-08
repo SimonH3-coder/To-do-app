@@ -64,6 +64,22 @@ function makeNewData() {
           { name: "right", done: false },
         ],
       },
+      {
+        listName: "spil",
+        items: [
+          { name: "Sly 2", done: false },
+          { name: "Diablo 2", done: true },
+          { name: "DOOM 4", done: false },
+        ],
+      },
+      {
+        listName: "spil2",
+        items: [
+          { name: "write", done: false },
+          { name: "wrong", done: true },
+          { name: "right", done: false },
+        ],
+      },
     ],
   };
   //   console.log(newData.lists[0].items[1]);
