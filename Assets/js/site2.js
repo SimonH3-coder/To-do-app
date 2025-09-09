@@ -177,6 +177,28 @@ function deleteTodo(li) {
   editIndex = null; //Indlaes de valgte edit
 }
 
+//Tilfoej button
+const input = document.getElementById(`todotiloejInput`);
+const addBtn = document.getElementById(`add btn`);
+const list = document.getElementById(`todotilfoejList`);
+
+function addTodo() {
+  const text = input.value.trim();
+  if (!text) return;
+
+  const li = document.createElement(`li`);
+
+  const toggle = document.createElement(`input`);
+  toggle.type = `checkbox`;
+  toggle.addEventListener(`change`, () => {
+    li.classList.toggle(`done`, toggle.checked);
+  });
+
+  const span = document.createElement(`span`);
+  span.textContent = text;
+}
+
+//New button
 // Få button til at virker
 const newListbutton = document.getElementById("newListbutton");
 const ValgInput = document.getElementById("ValgInput");
