@@ -1,6 +1,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
+  margin: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
 }
 
 ul {
@@ -17,7 +24,7 @@ li {
 }
 
 button {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .completed {

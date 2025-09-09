@@ -138,6 +138,9 @@ function worktodo() {
 
   if (editIndex !== null) {
     // Update aedringer i todo
+    document.querySelectorAll("#todoworkList li span")[editIndex].textContent = text;
+    editIndex = null;
+  } else {
   }
 }
 
