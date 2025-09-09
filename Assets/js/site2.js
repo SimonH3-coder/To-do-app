@@ -214,6 +214,31 @@ input.addEventListener(`keydown`, (e) => {
   if (e.key === `Enter`) addTodo();
 });
 
+//Darkmode og lightmode knap
+const btn = document.getElementById(`mode-btn`);
+const body = document.body;
+
+//Hvis en tidligere bruger har valgt, så husk det
+if (localStorage.getItem(`theme`) === `dark`) {
+  body.classList.add(`dark`);
+  btn.textContent = "Light Mode";
+  btn.classList.add("light-btn");
+}
+
+btn.addEventListener(`click`, () => {
+  body.classList.toggle(`dark`);
+
+  if (body.classList.contains(`dark`)) {
+    btn.textContent = "Light Mode";
+    btn.classList.add("Light-btn");
+    localStorage.setItem(`theme`, `dark`);
+  } else {
+    btn.textContent = "Dark Mode ";
+    btn.classList.remove("light-btn");
+    localStorage.setItem(`theme`, `light`);
+  }
+});
+
 //New button
 // Få button til at virker
 const newListbutton = document.getElementById("newListbutton");
