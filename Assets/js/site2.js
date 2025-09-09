@@ -129,6 +129,18 @@ function makelistView(data) {
   });
 }
 
+let editIndex = null;
+
+function worktodo() {
+  const input = document.getElementById("todoworkInput");
+  const text = input.value.trim();
+  if (text === "") return;
+
+  if (editIndex !== null) {
+    // Update aedringer i todo
+  }
+}
+
 // Få button til at virker
 const newListbutton = document.getElementById("newListbutton");
 const ValgInput = document.getElementById("ValgInput");
