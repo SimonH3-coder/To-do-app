@@ -196,7 +196,23 @@ function addTodo() {
 
   const span = document.createElement(`span`);
   span.textContent = text;
+
+  const del = document.createElement(`button`);
+  del.textContent = `Slet`;
+  del.addEventListener(`click`, () => li.remove());
+
+  li.append(toggle, span, del);
+  list.appendChild(li);
+
+  input.value = ``;
+  input.focus();
 }
+// klik knap
+addBtn.addEventListener(`click`, addTodo);
+//Tryk input
+input.addEventListener(`keydown`, (e) => {
+  if (e.key === `Enter`) addTodo();
+});
 
 //New button
 // Få button til at virker
