@@ -129,9 +129,10 @@ function makelistView(data) {
   });
 }
 
+// Button edit og delete
 let editIndex = null;
 
-function worktodo() {
+function workTodo() {
   const input = document.getElementById("todoworkInput");
   const text = input.value.trim();
   if (text === "") return;
@@ -141,7 +142,39 @@ function worktodo() {
     document.querySelectorAll("#todoworkList li span")[editIndex].textContent = text;
     editIndex = null;
   } else {
+    // Lav ny todo
+    const li = document.createElement("li");
+    li.className = "todo-item";
+
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.onclick = () => editTodo(li);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = () => deleteTodo(li);
+
+    li.appendChild(span);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+
+    document.getElementById("todoworkList").appendChild(li);
   }
+  input.value = "";
+}
+
+function editTodo(li) {
+  const span = li.querySelector("span");
+  document.getElementById("todoworkInput").value = span.textContent;
+  editIndex = Array.from(document.querySelectorAll("todoworkList")).indexOf(li);
+}
+
+function deleteTodo(li) {
+  li.remove();
+  editIndex = null; //Indlaes de valgte edit
 }
 
 // Få button til at virker
