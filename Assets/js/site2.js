@@ -109,6 +109,53 @@ function initApp() {
 
 //#endregion controller code
 
+function listViewCallback(action, index) {
+  console.log("listViewCallback", action, index);
+  let data = getData();
+  switch (action) {
+    case "showList":
+      const titles = document.querySelectorAll(".list-title");
+
+      data.lists[index].items.forEach((item) => {
+        const itemElement = document.createElement("p");
+        itemElement.textContent = item.name;
+        titles[index].appendChild(itemElement);
+        function addTaskToList(listIndex, taskName) {
+          if (!taskName || taskName.trim() === "") return;
+          let data = getData();
+          data.lists[listIndex].items.push({ name: taskName.trim(), done: false });
+          saveData(data);
+          makelistView(data);
+        }
+      });
+
+      alert("showList " + index);
+      break;
+    case "delete":
+      data.lists.splice(index, 1);
+      saveData(data);
+      alert("delete " + index);
+      break;
+    case "edit":
+      data.lists[index].listName = prompt("Ny liste navn", data.lists[index].listName);
+      saveData(data);
+      alert("edit " + index);
+      break;
+    case "tilføj":
+      const newtask = prompt("Hvad skal opgaven hedde?");
+      if (newtask) {
+        data.lists[index].items.push({ name: newtask, done: false });
+      }
+      saveData(data);
+      alert("tilføj " + index);
+      console.log(data);
+      break;
+    default:
+      alert("ukendt action " + action);
+      break;
+  }
+}
+
 //#region view code
 function makelistView(data) {
   console.log("makelistView");
@@ -117,65 +164,74 @@ function makelistView(data) {
 
   data.lists.forEach((list, index) => {
     let listContainer = document.createElement("div");
-    //vis liste
-    listContainer.innerHTML = `<h2 onclick="listViewCallback("showList",${index})">${list.listName}<h2>
-    <button onclick="listViewCallback("showList",${index})">delete</button>
-    <button onclick="listViewCallback("showList",${index})">edit</button>
-    <button onclick=listViewCallback("showList",${index})">tilføj</button>
-    <button onclick=listViewCallback("showList",${index}">darkmode</button>
-    `;
+
+    // Titel
+    const title = document.createElement("h2");
+    title.classList.add("list-title");
+    title.textContent = list.listName;
+    title.style.cursor = "pointer";
+    title.addEventListener("click", () => listViewCallback("showList", index));
+    listContainer.appendChild(title);
+
+    // Delete knap
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "delete";
+    deleteBtn.addEventListener("click", () => listViewCallback("delete", index));
+    listContainer.appendChild(deleteBtn);
+
+    // Edit knap
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "edit";
+    editBtn.addEventListener("click", () => listViewCallback("edit", index));
+    listContainer.appendChild(editBtn);
+
+    // Tilføj knap
+    const addBtn = document.createElement("button");
+    addBtn.textContent = "tilføj";
+    addBtn.addEventListener("click", () => listViewCallback("tilføj", index));
+    listContainer.appendChild(addBtn);
+
+    // Darkmode knap
 
     contentSection.appendChild(listContainer);
   });
 }
 
-// Button edit og delete
-let editIndex = null;
+// Knap for edit og delete
+const todoworkList = document.getElementById("todoworkList");
+const todoworkInput = document.getElementById("todoworkInput");
 
-function workTodo() {
-  const input = document.getElementById("todoworkInput");
-  const text = input.value.trim();
+function addworkTodo() {
+  const text = todoworkInput.value.trim();
   if (text === "") return;
 
-  if (editIndex !== null) {
-    // Update aedringer i todo
-    document.querySelectorAll("#todoworkList li span")[editIndex].textContent = text;
-    editIndex = null;
-  } else {
-    // Lav ny todo
-    const li = document.createElement("li");
-    li.className = "todo-item";
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  span.textContent = text;
 
-    const span = document.createElement("span");
-    span.textContent = text;
+  // Edit knap
+  const editBtn = document.createElement("button");
+  editBtn.textContent = "Edit";
+  editBtn.onclick = () => {
+    const newText = prompt("Edit todo", span.textContent);
+    if (newText !== null && newText.trim() !== "") {
+      span.textContent = newText.trim();
+    }
+  };
 
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "Edit";
-    editBtn.onclick = () => editTodo(li);
+  // Delete knap
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.onclick = () => {
+    li.remove();
+  };
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.onclick = () => deleteTodo(li);
-
-    li.appendChild(span);
-    li.appendChild(editBtn);
-    li.appendChild(deleteBtn);
-
-    document.getElementById("todoworkList").appendChild(li);
-  }
-  input.value = "";
+  li.appendChild(span);
+  li.appendChild(editBtn);
+  li.appendChild(deleteBtn);
+  todoworkList.appendChild(li);
 }
-
-function editTodo(li) {
-  const span = li.querySelector("span");
-  document.getElementById("todoworkInput").value = span.textContent;
-  editIndex = Array.from(document.querySelectorAll("todoworkList")).indexOf(li);
-}
-
-function deleteTodo(li) {
-  li.remove();
-  editIndex = null; //Indlaes de valgte edit
-}
+todoworkInput.value = "";
 
 //Tilfoej button
 const input = document.getElementById(`todotiloejInput`);
