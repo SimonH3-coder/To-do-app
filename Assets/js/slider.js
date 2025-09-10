@@ -1,11 +1,12 @@
 var slideIndex = 1;
-showDivs(slideIndex);
+showsDivs(slideIndex);
 
 function plusDivs(n) {
   showsDivs((slideIndex += n));
 }
 
 function showsDivs(n) {
+  console.log("hej");
   var i;
   var x = document.getElementsByClassName("sliderapp");
   if (n > x.length) {
