@@ -12,8 +12,20 @@
   </head>
   <body>
     <header>
-      <h1 id="headline">Liste</h1>
+      <div class="header-todo">
+        <h1 id="headline">Liste</h1>
+        <img src="Assets/img/edit_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" height="50px" alt="" />
+      </div>
     </header>
+
+    <div class="body-todo">
+      <input type="text" id="todotext" class="input-doto" placeholder="Add your items" />
+      <img src="Assets/img/add_circle_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="+" id="AddUpdateClick" onclick="CreateToDOItems()" />
+    </div>
+
+    <h5 id="Eddie"></h5>
+    <ul id="items-list" class="items-list"></ul>
+
     <!-- Slider knap -->
     <!-- <div class="sliderapp"> -->
     <!-- <h2>Slider app</h2> -->
