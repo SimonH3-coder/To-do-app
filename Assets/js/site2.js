@@ -191,6 +191,12 @@ function makelistView(data) {
     addBtn.addEventListener("click", () => listViewCallback("tilføj", index));
     listContainer.appendChild(addBtn);
 
+    list.items.forEach((item) => {
+      const itemElement = document.createElement("p");
+      itemElement.textContent = item.name;
+      listContainer.appendChild(itemElement);
+    });
+
     // Darkmode knap
 
     contentSection.appendChild(listContainer);
