@@ -18,37 +18,31 @@
       </div>
     </header>
 
-    <div class="body-todo">
-      <input type="text" id="todotext" class="input-doto" placeholder="Add your items" />
-      <img src="Assets/img/add_circle_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="+" id="AddUpdateClick" onclick="CreateToDOItems()" />
-    </div>
+    <main>
+      <div class="body-todo">
+        <input type="text" id="todotext" class="input-doto" placeholder="Add your items" />
+        <img src="Assets/img/add_circle_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="+" id="AddUpdateClick" onclick="CreateToDOItems()" />
+      </div>
 
-    <h5 id="Eddie"></h5>
-    <ul id="items-list" class="items-list"></ul>
+      <h5 id="Eddie"></h5>
+      <ul id="items-list" class="items-list"></ul>
 
-    <!-- Slider knap -->
-    <!-- <div class="sliderapp"> -->
-    <!-- <h2>Slider app</h2> -->
-    <!-- <button class="w3 button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button> -->
+      <!-- Edit og delete knapper -->
+      <section id="content"></section>
+      <!-- Edit og delete knapper -->
+      <div>
+        <input type="text" id="todoworkInput" placeholder="Skriv edit og delete" />
+        <button id="addworkTodo()">work</button>
+        <ul id="todoworkList"></ul>
+      </div>
 
-    <!-- <button class="w3 button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button> -->
-    <!-- </div> -->
-
-    <!-- Edit og delete knapper -->
-    <section id="content"></section>
-    <!-- Edit og delete knapper -->
-    <div>
-      <input type="text" id="todoworkInput" placeholder="Skriv edit og delete" />
-      <button id="addworkTodo()">work</button>
-      <ul id="todoworkList"></ul>
-    </div>
-
-    <!-- Tilføj knap -->
-    <div>
-      <input id="todotiloejInput" placeholder="skriv tilføj" />
-      <button id="add btn" type="button">Tilføj</button>
-      <ul id="todotilfoejList"></ul>
-    </div>
+      <!-- Tilføj knap -->
+      <div>
+        <input id="todotiloejInput" placeholder="skriv tilføj" />
+        <button id="add btn" type="button">Tilføj</button>
+        <ul id="todotilfoejList"></ul>
+      </div>
+    </main>
 
     <!-- Darkmode og lightmode knap -->
     <div>
@@ -59,7 +53,7 @@
     <!-- New knap -->
     <footer>
       <input type="text" id="ValgInput" placeholder="Tryk et valg" />
-      <button id="newListbutton">New</button>
+      <button id="newListbutton">+</button>
       <ul id="ValgList"></ul>
     </footer>
   </body>
