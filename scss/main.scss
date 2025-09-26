@@ -1,4 +1,6 @@
 //import
+@use "partials-ul.scss";
+@use "partials-mixins.scss" as *;
 @use "partials-variables.scss" as *;
 
 body {
