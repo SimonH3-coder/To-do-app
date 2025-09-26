@@ -1,0 +1,27 @@
+@use "partials-variables.scss" as *;
+
+@mixin nav-style {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+
+  align-items: center;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $primary-color;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+}

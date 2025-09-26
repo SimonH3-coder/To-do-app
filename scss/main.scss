@@ -15,3 +15,10 @@ body {
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s;
 }
+
+.container {
+  background-color: $primary-color;
+  padding: 25px;
+  width: 550px;
+  border-radius: 10px;
+}
