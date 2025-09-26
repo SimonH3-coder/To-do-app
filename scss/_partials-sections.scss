@@ -1,0 +1,15 @@
+@use "partials-variables.scss" as *;
+main section {
+  padding: 2rem 0;
+
+  p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+
+    div {
+      background-color: $secondary-color5;
+      padding: 1rem 0;
+      margin: 1rem 0;
+    }
+  }
+}

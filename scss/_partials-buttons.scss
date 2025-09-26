@@ -12,6 +12,11 @@ button {
   border-radius: 50px;
   margin-left: 5px;
   cursor: pointer;
-  color: $text-color;
+  background: $secondary-color4;
+  color: $secondary-color5;
   transition: background 0.3s;
+}
+
+#mode-bth {
+  background-color: $secondary-color3;
 }
