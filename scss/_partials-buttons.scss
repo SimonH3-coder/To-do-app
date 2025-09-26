@@ -1,0 +1,17 @@
+@use "partials-variables.scss" as *;
+
+.dark {
+  background-color: $secondary-color3;
+  color: $secondary-color;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: solid 2px $secondary-color2;
+  border-radius: 50px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: $text-color;
+  transition: background 0.3s;
+}
