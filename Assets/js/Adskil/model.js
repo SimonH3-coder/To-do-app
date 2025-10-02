@@ -88,3 +88,9 @@ function makeNewData() {
   return newData;
 }
 //#endregion model code
+
+//New button
+// Få button til at virker
+const newListbutton = document.getElementById("newListbutton");
+const ValgInput = document.getElementById("ValgInput");
+const ValgList = document.getElementById("ValgList");
