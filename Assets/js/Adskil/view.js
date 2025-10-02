@@ -3,6 +3,7 @@
 const newListbutton = document.getElementById("newListbutton");
 const ValgInput = document.getElementById("ValgInput");
 const ValgList = document.getElementById("ValgList");
+const contentSection = document.getElementById("content");
 
 // Nyt valg
 newListbutton.addEventListener("click", () => {

@@ -1,3 +1,9 @@
+import { listViewCallback } from "../Adskil/controller.js";
+import { makelistView } from "../Adskil/controller.js";
+import { addworkTodo } from "../Adskil/controller.js";
+import { addTodo } from "../Adskil/controller.js";
+import { initApp } from "../Adskil/controller.js";
+
 //#region globals
 const contentSection = document.getElementById("content");
 let currentData = null;
@@ -6,20 +12,20 @@ let currentData = null;
 initApp();
 //#endregion
 //#region model code
-function getData() {
+export function getData() {
   console.log("getData");
 
   return JSON.parse(localStorage.getItem("toDoApp_v1"));
 }
 
-function saveData(mydData) {
+export function saveData(mydData) {
   console.log("saveData");
   let seriallizedData = JSON.stringify(mydData);
 
   localStorage.setItem("toDoApp_v1", seriallizedData);
 }
 
-function makeNewData() {
+export function makeNewData() {
   console.log("makeNewData");
   // dummt data husk at tømme lister inden deployment
   let newData = {

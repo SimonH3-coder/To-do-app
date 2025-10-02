@@ -1,5 +1,10 @@
+import { getData, saveData } from "../Adskil/model.js";
+import { makeNewData } from "../Adskil/model.js";
+
+const contentSection = document.getElementById("content");
+
 //#region controller code
-function initApp() {
+export function initApp() {
   console.log("initApp");
   //hent data
   currentData = getData();
@@ -18,7 +23,7 @@ function initApp() {
 
 //#endregion controller code
 
-function listViewCallback(action, index) {
+export function listViewCallback(action, index) {
   console.log("listViewCallback", action, index);
   let data = getData();
   switch (action) {
@@ -66,7 +71,7 @@ function listViewCallback(action, index) {
 }
 
 //#region view code
-function makelistView(data) {
+export function makelistView(data) {
   console.log("makelistView");
   // tøm contenSection
   contentSection.innerHTML = "";
@@ -116,7 +121,7 @@ function makelistView(data) {
 const todoworkList = document.getElementById("todoworkList");
 const todoworkInput = document.getElementById("todoworkInput");
 
-function addworkTodo() {
+export function addworkTodo() {
   const text = todoworkInput.value.trim();
   if (text === "") return;
 
@@ -153,7 +158,7 @@ const input = document.getElementById(`todotiloejInput`);
 const addBtn = document.getElementById(`add btn`);
 const list = document.getElementById(`todotilfoejList`);
 
-function addTodo() {
+export function addTodo() {
   const text = input.value.trim();
   if (!text) return;
 
