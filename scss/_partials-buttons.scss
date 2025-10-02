@@ -20,3 +20,17 @@ button {
 #mode-bth {
   background-color: $secondary-color3;
 }
+
+footer button {
+  background-color: var(--bg);
+}
+
+.light-btn {
+  background: #ddd;
+  color: #000;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
