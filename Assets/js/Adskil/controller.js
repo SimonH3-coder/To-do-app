@@ -7,7 +7,7 @@ const contentSection = document.getElementById("content");
 export function initApp() {
   console.log("initApp");
   //hent data
-  currentData = getData();
+  let currentData = getData();
 
   // evaluer data
   if (currentData == null) {
@@ -74,6 +74,7 @@ export function listViewCallback(action, index) {
 export function makelistView(data) {
   console.log("makelistView");
   // tøm contenSection
+  const contentSection = document.getElementById("content");
   contentSection.innerHTML = "";
 
   data.lists.forEach((list, index) => {
